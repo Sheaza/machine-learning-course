@@ -1,15 +1,14 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
 
 data = pd.read_csv("data/Position_Salaries.csv")
 
 x = data.iloc[:, 1:-1].values
 y = data.iloc[:, -1].values
 
-# we don't need to scale features for decision tree
-regressor = DecisionTreeRegressor(random_state=0)
+regressor = RandomForestRegressor(n_estimators=10, random_state=0)
 regressor.fit(x, y)
 
 y_pred = regressor.predict([[6.5]])
