@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from apyori import apriori
 
+# apriori uses bfs algorithm
+
 data = pd.read_csv('data/Market_Basket_Optimisation.csv', header=None)
 
 # apriori model expects a certain format of the data (LIST of transactions)
