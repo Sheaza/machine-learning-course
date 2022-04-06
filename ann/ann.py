@@ -16,7 +16,7 @@ y = data.iloc[:, -1].values
 
 # categorical data encoding
 
-le = LabelEncoder
+le = LabelEncoder()
 X[:, 2] = le.fit_transform(X[:, 2])
 
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1])], remainder='passthrough')
